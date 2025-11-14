@@ -1,8 +1,5 @@
 # Control-Optimization-of-a-Remotely-Operated-Robot-using-the-Photothermal-Effect
 [열시스템해석] 팀 프로젝트(논문 작성)
-
-네, GitHub `README.md` 파일용으로 번역해 드릴게요.
-
 -----
 
 ## Research Topic: Control Optimization of a Remotely Operated Robot using the Photothermal Effect

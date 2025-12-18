@@ -26,9 +26,10 @@ def run_final_show():
     plane_id = p.loadURDF("plane.urdf")
     p.changeDynamics(plane_id, -1, lateralFriction=0.5) 
 
-    my_urdf_path = os.path.join(os.getcwd(), "Capsule_robot_description", "urdf", "Capsule_robot.urdf")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    urdf_path = os.path.join(current_dir, "urdf", "Capsule_robot.urdf")
+    robot_id = p.loadURDF(urdf_path, start_pos, useFixedBase=False)
     start_pos = [0, 0, 0.05] 
-    robot_id = p.loadURDF(my_urdf_path, start_pos, useFixedBase=False)
 
     joints = []
     num_joints = p.getNumJoints(robot_id)

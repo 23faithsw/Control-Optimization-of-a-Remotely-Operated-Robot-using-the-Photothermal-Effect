@@ -68,11 +68,8 @@ class LCP_CaterpillarEnv(gym.Env):
         base_signal = np.array([math.sin(t * self.wave_freq - i * self.wave_lag) for i in range(self.num_joints)])
         
 
-        # action(0~1) -> (-1~1)로 변환 후, 0.5배 축소하여 '보정' 용도로만 사용
         ai_correction = (action - 0.5) * 2.0 
 
-        # 이렇게 하면 AI가 조금만 실수해도 기본 파동 덕분에 앞으로 잘 갑니다.
-        # 즉, "가만히 있으면 중간은 간다"는 걸 알기에 엔트로피가 낮아집니다.
         final_command = base_signal + (ai_correction * 0.5)
         
         for i, joint_idx in enumerate(self.joints):

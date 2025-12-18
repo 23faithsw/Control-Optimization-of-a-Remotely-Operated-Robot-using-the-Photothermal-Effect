@@ -17,31 +17,22 @@
   * **(Attach final optimized light pattern heatmap screenshot here)**
       * *Description: The final heatmap visualizes the optimized light actuation pattern learned by the SAC agent.*
 
-## How to Run
+## 🚀 How to Run
 
-1.  **Create and activate the conda environment:**
+### 1. Install Dependencies
+```bash
+pip install gymnasium stable-baselines3 pybullet shimmy numpy matplotlib
+2. Train the Agent
+Bash
 
-    ```bash
-    conda create -n lcp_env python=3.10
-    conda activate lcp_env
-    ```
+python train_final.py
+Training logs will be saved in the final_logs directory.
 
-2.  **Install dependencies:**
+3. Verify & Visualize Results
+Bash
 
-    ```bash
-    pip install ... 
-    # (Add your full pip install commands here)
-    ```
-
-3.  **Train the model:**
-
-    ```bash
-    # To train the agent
-    python train.py
-    ```
-
-4.  **Test and visualize the results:**
-
+python verify_emergence.py
+This script loads the trained model and generates performance analysis graphs.
     ```bash
     # To visualize the trained agent's behavior and plot the results
     python test_and_plot.py
